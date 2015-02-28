@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Users</h1>
+<h1>Lista uzytkownikow</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Imie</th>
       <th>Email</th>
-      <th>Active</th>
+      <th>Aktywny</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,8 +18,8 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.active %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edycja', edit_user_path(user) %></td>
+        <td><%= link_to 'Usun', user, method: :delete, data: { confirm: 'Czy jestes pewien?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Nowy uzytkownik', new_user_path %>

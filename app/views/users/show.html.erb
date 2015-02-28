@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Imie:</strong>
   <%= @user.name %>
 </p>
 
@@ -11,9 +11,9 @@
 </p>
 
 <p>
-  <strong>Active:</strong>
-  <%= @user.active %>
+  <strong>Aktywny:</strong>
+  <%= @user.active? ? "Prawda" : "Fałsz" %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edytuj', edit_user_path(@user) %> |
+<%= link_to 'Cofnij', users_path %>

@@ -13,10 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20150228111702) do
 
+<<<<<<< HEAD
+  create_table "Uzytkownicy", force: :cascade do |t|
+    t.string   "Imie",       limit: 255
+    t.string   "email",      limit: 255
+    t.boolean  "Aktywni",     limit: 1
+=======
   create_table "users", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "email",      limit: 255
     t.boolean  "active",     limit: 1
+>>>>>>> 8556854a4dd37a77f070fb968992ace09d1b6008
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
