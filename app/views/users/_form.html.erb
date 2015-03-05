@@ -23,6 +23,14 @@
     <%= f.label "aktywny" %><br>
     <%= f.check_box :active %>
   </div>
+
+  <div class="field">
+    <%= f.fields_for :products do |p| %>
+      <%= p.label :name %>
+      <%= p.text_field :name %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Wyslij" %>
   </div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :products
+
   get 'page/index'
 
   resources :users, except: :show

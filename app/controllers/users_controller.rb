@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @user.products.build
   end
 
   # GET /users/1/edit
@@ -92,6 +93,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :active)
+      params.require(:user).permit(:name, :email, :active, :products_attributes => [:id, :name])
     end
 end
