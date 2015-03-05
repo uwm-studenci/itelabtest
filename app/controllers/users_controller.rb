@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.where(active: true)
+    @users = User.all
   end
 
   # GET /users/1
@@ -21,15 +21,38 @@ class UsersController < ApplicationController
   def edit
   end
 
+
+ # GET /users
+# GET /users.xml
+def index
+@users = User.all
+respond_to do |format|
+format.html # index.html.erb
+format.xml { render :xml => @users.to_xml }
+end
+end
+# GET /users/1
+# GET /users/1.xml
+def show
+respond_to do |format|
+format.html # show.html.erb
+format.xml { render :xml => @user.to_xml }
+end
+end
+
+
+
   # POST /users
   # POST /users.json
   def create
+
+
     @user = User.new(user_params)
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_path, notice: 'Uzytkownik zostal stworzony.' }
-        format.json { render :show, status: :created, location: users_path }
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -42,8 +65,8 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_path, notice: 'Uzytkownk zostal edytowany.' }
-        format.json { render :show, status: :ok, location: users_path }
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -56,7 +79,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'Uzytkownik zostal usuniety' }
+      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
