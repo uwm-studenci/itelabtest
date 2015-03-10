@@ -7,5 +7,9 @@ class CreateTasks < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    create_table :tasks_users, id: false do |t|
+    	t.belongs_to :user, index: true
+    	t.belongs_to :task, index: true
+    end
   end
 end
