@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 20150310105913) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "tasks_users", id: false, force: :cascade do |t|
+    t.integer "user_id", limit: 4
+    t.integer "task_id", limit: 4
+  end
+
+  add_index "tasks_users", ["task_id"], name: "index_tasks_users_on_task_id", using: :btree
+  add_index "tasks_users", ["user_id"], name: "index_tasks_users_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "email",      limit: 255
