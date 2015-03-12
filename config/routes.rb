@@ -2,10 +2,13 @@ Rails.application.routes.draw do
   resources :products
 
   get 'page/index'
+
   
    resources :users, except: :show
 
   get 'page' => 'page#index' ,as: :page
+
+   
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

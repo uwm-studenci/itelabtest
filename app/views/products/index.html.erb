@@ -10,10 +10,9 @@
 
 
   <tbody>
-    <% @products.each do |product| %>
+    <% for product in @products %>
       <tr>
         <td><%= product.name %></td>
- 		<td><%= product.user.id %></td>
         <td><%= link_to 'Edycja', edit_product_path(product), class: "button radius" %></td>
         <td><%= link_to 'Usun', product, class: "button radius", method: :delete, data: { confirm: 'Czy jestes pewien?' } %></td>
       </tr>
