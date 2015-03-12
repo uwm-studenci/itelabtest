@@ -1,2 +1,12 @@
-h1 Tasks#index
-p Find me in app/views/tasks/index.html.slim
+table#tasks
+  thead
+    tr
+      th Nazwa
+      th Aktywny
+      th Status
+  tbody
+  -@tasks.each do |task| 
+    = render :partial => "tr", locals: {task: task}
+
+= render "form"
+    

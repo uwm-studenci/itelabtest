@@ -1,0 +1,6 @@
+= simple_form_for @task, :remote => true do |t|
+  = t.input :name
+  = t.input :active
+  = t.input :status
+  = hidden_field_tag :user_id,  @user[:id]
+  = t.submit
