@@ -1,2 +1,13 @@
-h1 Tasks#index
-p Find me in app/views/tasks/index.html.slim
+table
+  thead
+    tr
+      th Nazwa
+      th Aktywny
+      th Status
+  tbody
+  -@tasks.each do |task| 
+    tr
+      td = task.name 
+      td = task.active 
+      td = task.status 
+    

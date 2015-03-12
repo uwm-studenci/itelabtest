@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
    def index
-    @tasks = Task.joins(:users).find(params[:id])
+    @tasks = Task.all
   end
 
   def new
