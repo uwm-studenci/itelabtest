@@ -1,4 +1,26 @@
-<% for product in @products do %>
-	<p><%= product.name %></p>
-	<p><%= product.user.id %></p>
-<% end %>
+
+
+
+<p id="notice"><%= notice %></p>
+
+
+<h1>Lista produktów</h1>
+
+<table>
+
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+ 		<td><%= product.user.id %></td>
+        <td><%= link_to 'Edycja', edit_product_path(product), class: "button radius" %></td>
+        <td><%= link_to 'Usun', product, class: "button radius", method: :delete, data: { confirm: 'Czy jestes pewien?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nowy produkt', new_product_path, class: "button radius" %>

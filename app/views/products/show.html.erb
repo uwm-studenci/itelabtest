@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nazwa:</strong>
+  <%= @product.name %>
+</p>
+
+
+
+
+<%= link_to 'Edytuj', edit_product_path(@product), class: "button radius" %> |
+<%= link_to 'Cofnij', products_path, class: "button radius" %>
