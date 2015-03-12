@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   
    resources :users, except: :show
 
+   resources :tasks
+
     get 'users/:id/tasks' => 'tasks#index' ,as: :edit_tasks
-    get 'users/:id/new' => 'tasks#new' ,as: :new_task
     get 'users/:id/destroy' => 'tasks#index' ,as: :destroy_task
 
   get 'page' => 'page#index' ,as: :page

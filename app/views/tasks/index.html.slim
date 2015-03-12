@@ -1,4 +1,4 @@
-table
+table#tasks
   thead
     tr
       th Nazwa
@@ -6,8 +6,7 @@ table
       th Status
   tbody
   -@tasks.each do |task| 
-    tr
-      td = task.name 
-      td = task.active 
-      td = task.status 
+    = render :partial => "tr", locals: {task: task}
+
+= render "form"
     
