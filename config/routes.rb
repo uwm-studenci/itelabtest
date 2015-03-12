@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+
   resources :products
 
   get 'page/index'
 
   
    resources :users, except: :show
+
+    get 'users/:id/tasks' => 'tasks#index' ,as: :edit_tasks
+    get 'users/:id/new' => 'tasks#new' ,as: :new_task
+    get 'users/:id/destroy' => 'tasks#index' ,as: :destroy_task
 
   get 'page' => 'page#index' ,as: :page
 

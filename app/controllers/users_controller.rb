@@ -22,6 +22,10 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def tasks
+    @tasks = Task.all
+  end
+
 
  # GET /users
 # GET /users.xml
