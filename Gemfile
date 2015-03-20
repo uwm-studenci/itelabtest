@@ -56,3 +56,5 @@ end
 
 
 gem 'foundation-rails'
+gem "carrierwave"
+gem "mini_magick"

@@ -50,13 +50,11 @@ end
   # POST /users
   # POST /users.json
   def create
-
-
     @user = User.new(user_params)
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to users_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -70,7 +68,7 @@ end
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to users_path, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -96,6 +94,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :active, :products_attributes => [:id, :name])
+      params.require(:user).permit(:name, :email, :active, :avatar, :products_attributes => [:id, :name])
     end
 end
